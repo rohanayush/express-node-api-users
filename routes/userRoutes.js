@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 const router = express.Router();
 
-// GET all users
+
 router.get('/', async (req, res) => {
   try {
     const users = await User.find();
@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST a new user
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
   const { name, email, age } = req.body;
 
   if (!name || !email || !age) {
@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 });
 
 // GET a user by ID
-router.get('/:id', async (req, res) => {
+router.get('/fetch/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
     if (!user) {
@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.put('/:id', async (req, res) => {
+router.put('/modify/:id', async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(
       req.params.id,
@@ -63,7 +63,7 @@ router.put('/:id', async (req, res) => {
 });
 
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
 

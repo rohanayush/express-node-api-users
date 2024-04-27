@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 dotenv.config();
 
-const CONN_STRING=process.env.CONN_STRING;
+const CONN_STRING = process.env.CONN_STRING;
 
 const connectDB = async () => {
   try {
