@@ -1,8 +1,8 @@
 import express from 'express'; // Import Express
 import cors from 'cors'; // Import CORS middleware
 import dotenv from 'dotenv'; // Import Dotenv for environment variables
-import connectDB   from './db.js'; // Import connectDB function
-import userRoutes from './routes/userRoutes.js'; 
+import connectDB   from '../db.js'; // Import connectDB function
+import userRoutes from '../routes/userRoutes.js'; 
 dotenv.config();
 connectDB();
 const app = express();
